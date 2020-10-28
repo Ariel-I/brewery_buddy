@@ -29,7 +29,13 @@ class BreweriesController < ApplicationController
   end
   
   patch '/breweries/:id' do 
+    brewery = Brewery.find_by(id: params[:id])
     
+    if brewery.update(name: params[:name], location: params[:location])
+      redirect "/breweries/#{brewery.id}"
+    else 
+      redirect "breweries/#{brewery.id}/edit"
+    end 
   end 
   
   get '/breweries/:id' do 
@@ -41,5 +47,7 @@ class BreweriesController < ApplicationController
       redirect '/breweries'
     end 
    end 
+   
+  delete 
   
 end 
