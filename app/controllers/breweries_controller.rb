@@ -48,6 +48,10 @@ class BreweriesController < ApplicationController
     end 
    end 
    
-  delete 
+  delete '/breweries/:id' do 
+    @brewery = Brewery.find_by(id: params[:id])
+    @brewery.destroy
+    redirect '/breweries'
+  end 
   
 end 
