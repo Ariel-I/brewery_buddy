@@ -11,7 +11,6 @@ class BreweriesController < ApplicationController
   end 
   
   post '/breweries' do 
-    binding.pry 
     user = User.find_by(id: params[:user_id])
     brewery = user.breweries.build(params)
     if brewery.save

@@ -1,16 +1,14 @@
 <h1>Create a New Brewery!</h1>
 <br>
 
-
-
 <form action="/breweries" method="POST">
   <label>Select User:</label>
   <select name="user_id">
-    <% @user.each do |user| %>
-    <option value="<% user.id %>"><% user.name %></option>
+    <% @users.each do |user| %>
+    <option value="<%= user.id %>"><%= user.name %></option>
     <% end %>
   </select>
-  <br>
+  <br><br>
   
   <label for="name">Brewery Name:</label>
   <input type="text" name="brewery" id="brewery">
