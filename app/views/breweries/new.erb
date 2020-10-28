@@ -1,7 +1,17 @@
 <h1>Create a New Brewery!</h1>
 <br>
 
+
+
 <form action="/breweries" method="POST">
+  <label>Select User:</label>
+  <select name="user_id">
+    <% @user.each do |user| %>
+    <option value="<% user.id %>"><% user.name %></option>
+    <% end %>
+  </select>
+  <br>
+  
   <label for="name">Brewery Name:</label>
   <input type="text" name="brewery" id="brewery">
   <br><br>
@@ -9,4 +19,4 @@
   <input type="text" name="location" id="location">
   <br><br>
   <input type="submit" id="submit" value="Create Brewery">
-  </form>
+</form>
