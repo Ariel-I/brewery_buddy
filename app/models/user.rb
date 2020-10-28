@@ -1,3 +1,3 @@
-class Beverage < ActiveRecord::Base 
-  belongs_to :brewery
+class User < ActiveRecord::Base 
+  has_many :breweries
 end 
