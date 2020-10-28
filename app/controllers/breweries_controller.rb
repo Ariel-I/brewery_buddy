@@ -13,9 +13,12 @@ class BreweriesController < ApplicationController
   
   post '/breweries' do 
     user = User.find_by(id: params[:user_id])
-    breweries = user.breweries.build(params)
+    brewery = user.breweries.build(params)
     if brewery.save
       redirect "/breweries/#{brewery.id}"
+    else
+      redirect "/breweries/new"
+    end
   end 
   
   
