@@ -2,7 +2,12 @@
 
 <h3><% @brewery.location %></h3>
 
-<a href="/breweries/<% @brewery.id%>" method="DELETE"> Delete Brewery </a>
+<form action="/breweries/<% @brewery.id %>" method="POST">
+  <input type="hidden" id="hidden" name="_method" value="Delete">
+  <input type="submit" value="Delete">
+</form>
+
+
 <a href="/breweries/<% @brewery.id%>/eidt>"> Edit Brewery </a>
 <br>
 
