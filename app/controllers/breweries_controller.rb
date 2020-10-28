@@ -6,6 +6,7 @@ class BreweriesController < ApplicationController
   end
   
   get '/breweries/new' do 
+    binding.pry
     @users = User.all 
     erb :'breweries/new'
   end 
