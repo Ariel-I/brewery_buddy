@@ -21,7 +21,16 @@ class BreweriesController < ApplicationController
     end
   end 
   
+  get '/breweries/:id/edit' do 
+    @users = User.all 
+    @brewery = Brewery.find_by(params)
+    
+    erb :"/breweries/edit"
+  end
   
+  patch '/breweries/:id' do 
+    
+  end 
   
   get '/breweries/:id' do 
     @brewery = Brewery.find_by(id: params[:id])
