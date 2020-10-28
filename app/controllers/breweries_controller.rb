@@ -6,4 +6,12 @@ class BreweriesController < ApplicationController
     erb :'/breweries/index'
   end
   
+  get '/breweries/:id' do 
+    @brewery = Brewery.find_by(id: params[:id])
+    
+    if @brewery 
+      erb :'breweries/show'
+    else 
+      redirect '/breweries'
+  
 end 
