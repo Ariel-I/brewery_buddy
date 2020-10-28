@@ -2,16 +2,16 @@ class BreweriesController < ApplicationController
   
   get '/breweries' do 
     @breweries = Brewery.all 
-    
     erb :'/breweries/index'
   end
   
   get '/breweries/new' do 
-    @user = User.all 
+    @users = User.all 
     erb :'breweries/new'
   end 
   
   post '/breweries' do 
+    binding.pry 
     user = User.find_by(id: params[:user_id])
     brewery = user.breweries.build(params)
     if brewery.save
