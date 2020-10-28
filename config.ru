@@ -5,6 +5,6 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use BreweriesController
-use UserController 
+use UsersController 
 
 run ApplicationController

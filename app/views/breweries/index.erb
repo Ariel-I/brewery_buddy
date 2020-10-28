@@ -1,0 +1,5 @@
+<h1>Breweries!</h1>
+
+ <% @breweries.each do |b| %>
+  <p><a href="/breweries/<%= b.id %>"><%= b.name %></a></p>
+ <% end %>
