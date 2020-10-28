@@ -13,5 +13,7 @@ class BreweriesController < ApplicationController
       erb :'breweries/show'
     else 
       redirect '/breweries'
+    end 
+   end 
   
 end 
