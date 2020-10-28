@@ -4,6 +4,7 @@ class CreateBrewery < ActiveRecord::Migration
     create_table :breweries do |t|
       t.string :name
       t.string :location
+      t.integer :user_id
     end 
   end
   
