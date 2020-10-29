@@ -27,10 +27,16 @@ class BreweriesController < ApplicationController
   end 
   
   get '/breweries/:id/edit' do 
-    @users = User.all 
-    @brewery = Brewery.find_by(params)
-    
-    erb :"/breweries/edit"
+    if logged_in?
+     @brewery = current_bar.user.breweries.find_by(params)
+      if @brewery
+        erb :"/breweries/edit"
+      else
+        redirect '/breweries'
+      end 
+    else
+    redirect '/login'
+   end
   end
   
   patch '/breweries/:id' do 
