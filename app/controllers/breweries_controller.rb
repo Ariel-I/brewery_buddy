@@ -1,20 +1,24 @@
 class BreweriesController < ApplicationController
   
   get '/breweries' do 
-    
-    @breweries = Brewery.all 
-    erb :'/breweries/index'
+    if logged_in?
+      @breweries = current_user.breweries
+      erb :'/breweries/index'
+    else 
+      redirect '/login'
+    end 
   end
   
   get '/breweries/new' do 
-    binding.pry
-    @users = User.all 
-    erb :'breweries/new'
+    if logged_in? 
+      erb :'breweries/new'
+    else 
+      redirect :'/login'
+    end 
   end 
   
   post '/breweries' do 
-    user = User.find_by(id: params[:user_id])
-    brewery = user.breweries.build(params)
+    brewery = current_user.breweries.build(params)
     if brewery.save
       redirect "/breweries/#{brewery.id}"
     else
