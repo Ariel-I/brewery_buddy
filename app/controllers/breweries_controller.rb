@@ -28,9 +28,9 @@ class BreweriesController < ApplicationController
   
   get '/breweries/:id/edit' do 
     if logged_in?
-     @brewery = current_user.breweries.find_by(params)
+     @brewery = current_user.breweries.find_by(id: params[:id])
       if @brewery
-        erb :"/breweries/edit"
+        redirect "/breweries/#{@brewery.id}/edit"
       else
         redirect '/breweries'
       end 
@@ -42,16 +42,13 @@ class BreweriesController < ApplicationController
   patch '/breweries/:id' do 
     if logged_in?
     brewery = current_user.breweries.find_by(id: params[:id])
-     if brewery 
-      if brewery.update(name: params[:name], location: params[:location])
-       redirect "/breweries/#{brewery.id}"
+      if brewery
+        brewery.update(name: params[:name], location: params[:location])
+        redirect "/breweries/#{brewery.id}"
       else 
-       redirect '/breweries'
+        redirect '/breweries'
       end 
-    else 
-      redirect '/breweries'
     end 
-   end
   end 
   
   get '/breweries/:id' do 

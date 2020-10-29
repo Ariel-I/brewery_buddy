@@ -3,9 +3,9 @@
 
 <form action="/breweries/<%= @brewery.id %>" method="POST">
   <input type="hidden" id="hidden" name="_method" value="PATCH">
-  <label>Brewery Name:<input type="text" name="brewery" id="brewery" value=<% @brewery.name %>></label>
+  <label>Brewery Name:<input type="text" name="name" id="name" value=<%= @brewery.name %>></label>
   <br><br>
-  <label>Brewery Location:<input type="text" name="location" id="location" value=<% @brewery.location %>></label>
+  <label>Brewery Location:<input type="text" name="location" id="location" value=<%= @brewery.location %>></label>
   <br><br>
-  <input type="submit" id="submit" value="Create Brewery">
+  <input type="submit" id="submit" value="Edit Brewery">
   </form>

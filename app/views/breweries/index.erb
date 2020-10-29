@@ -1,4 +1,4 @@
-<h1>Breweries!</h1>
+<h1>Your Breweries!</h1>
 
  <% @breweries.each do |b| %>
   <p><a href="/breweries/<%= b.id %>"><%= b.name %></a></p>
@@ -7,5 +7,7 @@
  <br>
  
  <a href="/breweries/new">Add Brewery</a>
+ <br>
+ 
  <br>
  <a href="/logout">Logout</a> 
