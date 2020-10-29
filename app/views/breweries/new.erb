@@ -2,14 +2,6 @@
 <br>
 
 <form action="/breweries" method="POST">
-  <label>Select User:</label>
-  <select name="user_id">
-    <% @users.each do |user| %>
-    <option value="<%= user.id %>"><%= user.name %></option>
-    <% end %>
-  </select>
-  <br><br>
-  
   <label for="name">Brewery Name:</label>
   <input type="text" name="brewery" id="brewery">
   <br><br>
