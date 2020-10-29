@@ -42,13 +42,14 @@ class BreweriesController < ApplicationController
   patch '/breweries/:id' do 
     if logged_in?
     brewery = current_user.breweries.find_by(id: params[:id])
+     if brewery 
       if brewery.update(name: params[:name], location: params[:location])
        redirect "/breweries/#{brewery.id}"
       else 
-       redirect "breweries/#{brewery.id}/edit"
+       redirect '/breweries'
       end 
     else 
-      redirect '/login'
+      redirect '/breweries'
     end 
   end 
   
