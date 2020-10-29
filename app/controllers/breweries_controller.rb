@@ -51,6 +51,7 @@ class BreweriesController < ApplicationController
     else 
       redirect '/breweries'
     end 
+   end
   end 
   
   get '/breweries/:id' do 

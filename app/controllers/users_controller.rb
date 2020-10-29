@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   get '/signup' do 
-    erb :signup 
+    erb :'/users/signup' 
   end 
   
   post '/signup' do 
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
      if user.save 
        redirect '/breweries'
      else
-       redirect '/signup'
+       redirect '/users/signup'
      end
    end 
   
