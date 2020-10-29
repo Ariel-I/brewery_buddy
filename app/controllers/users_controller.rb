@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end 
   
   post '/signup' do 
-    binding.pry
+    binding.pry 
     user = User.new(params)
      if user.save 
        session[:user_id] = user.id 

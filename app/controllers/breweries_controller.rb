@@ -28,7 +28,7 @@ class BreweriesController < ApplicationController
   
   get '/breweries/:id/edit' do 
     if logged_in?
-     @brewery = current_bar.user.breweries.find_by(params)
+     @brewery = current_user.breweries.find_by(params)
       if @brewery
         erb :"/breweries/edit"
       else
