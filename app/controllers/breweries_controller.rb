@@ -72,9 +72,8 @@ class BreweriesController < ApplicationController
       @brewery = current_user.breweries.find_by(id: params[:id])
        if @brewery
           @brewery.destroy
-       else 
+      end
          redirect '/breweries'
-       end 
     else 
       redirect '/login'
     end
