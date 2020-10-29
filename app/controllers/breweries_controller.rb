@@ -35,34 +35,47 @@ class BreweriesController < ApplicationController
         redirect '/breweries'
       end 
     else
-    redirect '/login'
+     redirect '/login'
    end
   end
   
   patch '/breweries/:id' do 
-    brewery = Brewery.find_by(id: params[:id])
-    
-    if brewery.update(name: params[:name], location: params[:location])
-      redirect "/breweries/#{brewery.id}"
+    if logged_in?
+    brewery = current_user.breweries.find_by(id: params[:id])
+      if brewery.update(name: params[:name], location: params[:location])
+       redirect "/breweries/#{brewery.id}"
+      else 
+       redirect "breweries/#{brewery.id}/edit"
+      end 
     else 
-      redirect "breweries/#{brewery.id}/edit"
+      redirect '/login'
     end 
   end 
   
   get '/breweries/:id' do 
-    @brewery = Brewery.find_by(id: params[:id])
-    
-    if @brewery 
-      erb :'breweries/show'
+    if logged_in?
+      @brewery = Brewery.find_by(id: params[:id])
+      if @brewery 
+        erb :'breweries/show'
+      else 
+        redirect '/breweries'
+      end 
     else 
-      redirect '/breweries'
+      redirect '/login'
     end 
-   end 
+  end 
    
   delete '/breweries/:id' do 
-    @brewery = Brewery.find_by(id: params[:id])
-    @brewery.destroy
-    redirect '/breweries'
+    if logged_in?
+      @brewery = current_user.breweries.find_by(id: params[:id])
+       if @brewery
+          @brewery.destroy
+       else 
+         redirect '/breweries'
+       end 
+    else 
+      redirect '/login'
+    end
   end 
   
 end 
