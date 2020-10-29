@@ -56,7 +56,7 @@ class BreweriesController < ApplicationController
   
   get '/breweries/:id' do 
     if logged_in?
-      @brewery = Brewery.find_by(id: params[:id])
+      @brewery = current_user.breweries.find_by(id: params[:id])
       if @brewery 
         erb :'breweries/show'
       else 
