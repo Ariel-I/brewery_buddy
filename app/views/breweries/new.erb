@@ -1,13 +1,14 @@
 <h1>Create a New Brewery!</h1>
 <hr>
 <br>
+    
+  <form action="/breweries" method="POST">
+    <label>Brewery Name:<input type="text" name="name" id="name"></label>
+    <br><br>
+    <label>Brewery Location:<input type="text" name="location" id="location"></label>
+    <br><br>
+    <label>Favorite Beers:<textarea name="beverages" cols="30" rows="10"></textarea></label>
+    <br><br>
+    <input type="submit" id="submit" value="Create Brewery">
+  </form>
 
-<form action="/breweries" method="POST">
-  <label>Brewery Name:<input type="text" name="name" id="name"></label>
-  <br><br>
-  <label>Brewery Location:<input type="text" name="location" id="location"></label>
-  <br><br>
-  <label>Favorite Beers:<input type="text" name="favorite_beers" id="favorite_beers"></label>
-  <br><br>
-  <input type="submit" id="submit" value="Create Brewery">
-</form>
