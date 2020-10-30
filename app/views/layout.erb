@@ -1,15 +1,40 @@
 <!DOCTYPE html>
+
+<style>
+   h1 {
+     color: #e6ffff;
+     font-size: 4em;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  body {
+    color: #e6ffff;
+    text-align: center;
+  }
+  
+  html { 
+     background: url("https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80") no-repeat center center fixed; 
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+  }
+ 
+</style>
+
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
  
   <body>
+    
     <div class="wrapper">
 
         <%= yield %>
 
       <footer class="branding">
+        <br>
         <small>&copy; 2020 <strong>BreweryBuddy</strong></small>
       </footer>
     </div>
