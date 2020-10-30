@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20201028020200) do
   create_table "breweries", force: :cascade do |t|
     t.string  "name"
     t.string  "location"
+    t.string  "beverages"
     t.integer "user_id"
   end
 

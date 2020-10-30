@@ -2,9 +2,11 @@
 <hr>
 <br>
 
-<h2><%= @brewery.name %> </h2>
+<h2><%= @brewery.name %></h2>
 
 <h3><%= @brewery.location %></h3>
+
+<h3><%= @brewery.beverages %></h3>
 
 <form action="/breweries/<%= @brewery.id %>" method="POST">
   <input type="hidden" id="hidden" name="_method" value="Delete">
