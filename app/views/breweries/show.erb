@@ -2,18 +2,23 @@
 <hr>
 <br>
 
-<h2><label>Location: <%= @brewery.location %></label></h2>
-<h2><label>Beer Notes: <%= @brewery.beverages %></label></h2>
-<br>
 
-<form action="/breweries/<%= @brewery.id %>" method="POST">
-  <input type="hidden" id="hidden" name="_method" value="Delete">
-  <input type="submit" value="Delete Brewery">
-</form>
+<div class="background">
+  <div class="transbox">
+    <p><label>Location: <%= @brewery.location %></label></p>
+    <p><label>Beer Notes: <%= @brewery.beverages %></label></p>
+    <br>
+  </div>
+</div>
+    <form action="/breweries/<%= @brewery.id %>" method="POST">
+     <input type="hidden" id="hidden" name="_method" value="Delete">
+     <input type="submit" value="Delete Brewery">
+    </form></p>
+    <br>
 
-<br>
+    <a href="/breweries/<%= @brewery.id %>/edit"><Button>Edit Brewery</Button></a>
+    <br><br>
 
-<a href="/breweries/<%= @brewery.id %>/edit"><Button>Edit </Button></a>
-<br>
+    <a href="/breweries"><Button>Go Back</Button></a> 
 
-<a href="/breweries"><Button>Go Back</Button></a> 
+
