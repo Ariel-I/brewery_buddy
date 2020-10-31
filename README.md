@@ -14,3 +14,10 @@ Then run - bundle install - in order to access all of the necessary gems.
 
 After the gems are installed you can run the program by running - shotgun - in the terminal and follow the route to the local host provided. 
 <h2> How to </h2>
+
+New users will have to sign up in order to create a new account. After creating a new login the user will be directed to the index page where there breweries will be stored. The page will start out blank and the user has the option to add a brewery or logout. After creating some breweries the user will have the option to view, edit or delete the brewery. The best part is where the user can save notes about the beers they liked the most!
+
+Cheers!
+
+<img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/clinking-beer-mugs.png">
+
